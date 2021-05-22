@@ -3,15 +3,15 @@ http://localhost:3000
 
 GET http://localhost:3000/users
 ###
-GET http://localhost:3000/users/60a752985fe98c35162546d1
+GET http://localhost:3000/users/60a752985fe98c35162546d2
 ###
 POST http://localhost:3000/users
 content-type: application/json
 
 {
-    "name": "Sushant",
+    "name": "Sushant Basak",
     "email" : "sushantbasak07@gmail.com",
-    "password" : "sfsafsfsaaf"
+    "password" : "saafgsfsf"
 }
 ###
 GET http://localhost:3000/tasks/
