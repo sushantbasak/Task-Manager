@@ -3,23 +3,31 @@ http://localhost:3000
 
 GET http://localhost:3000/users
 ###
-GET http://localhost:3000/users/60a752985fe98c35162546d2
+GET http://localhost:3000/users/60a895da65a9cb2a427d8274
+
 ###
-POST http://localhost:3000/users
+PATCH http://localhost:3000/users/60a895da65a9cb2a427d8274
 content-type: application/json
 
 {
-    "name": "Sushant Basak",
-    "email" : "sushantbasak07@gmail.com",
-    "password" : "saafgsfsf"
+    "age": 21,
+    "height" : 5
 }
+
 ###
 GET http://localhost:3000/tasks/
 
 ###
-GET http://localhost:3000/tasks/60a7544bc086cf35f7277129
+GET http://localhost:3000/tasks/60a88934358abde1cf0b9634
+###
+PATCH http://localhost:3000/tasks/60a88934358abde1cf0b9634
+content-type: application/json
 
-
+{
+    "desc": "Complete the next module by today",
+    "completed" : "true",
+    "dsaf":"sfas"
+}
 ###
 POST http://localhost:3000/tasks
 content-type: application/json
@@ -28,4 +36,6 @@ content-type: application/json
     "desc": "Complete the next module by today",
     "completed" : "false"
 }
+
+
  
