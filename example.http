@@ -1,0 +1,31 @@
+http://localhost:3000
+###
+
+GET http://localhost:3000/users
+###
+GET http://localhost:3000/users/60a752985fe98c35162546d1
+###
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+    "name": "Sushant",
+    "email" : "sushantbasak07@gmail.com",
+    "password" : "sfsafsfsaaf"
+}
+###
+GET http://localhost:3000/tasks/
+
+###
+GET http://localhost:3000/tasks/60a7544bc086cf35f7277129
+
+
+###
+POST http://localhost:3000/tasks
+content-type: application/json
+
+{
+    "desc": "Complete the next module by today",
+    "completed" : "false"
+}
+ 
