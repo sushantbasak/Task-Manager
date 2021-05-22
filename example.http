@@ -4,7 +4,6 @@ http://localhost:3000
 GET http://localhost:3000/users
 ###
 GET http://localhost:3000/users/60a895da65a9cb2a427d8274
-
 ###
 PATCH http://localhost:3000/users/60a895da65a9cb2a427d8274
 content-type: application/json
@@ -15,19 +14,24 @@ content-type: application/json
 }
 
 ###
+DELETE http://localhost:3000/users/60a895da65a9cb2a427d8274
+
+###
 GET http://localhost:3000/tasks/
 
 ###
-GET http://localhost:3000/tasks/60a88934358abde1cf0b9634
+GET http://localhost:3000/tasks/60a88988358abde1cf0b9635
 ###
-PATCH http://localhost:3000/tasks/60a88934358abde1cf0b9634
+PATCH http://localhost:3000/tasks/60a88988358abde1cf0b9635
 content-type: application/json
 
 {
     "desc": "Complete the next module by today",
-    "completed" : "true",
-    "dsaf":"sfas"
+    "completed" : "true"
 }
+###
+DELETE  http://localhost:3000/tasks/60a88988358abde1cf0b9635
+
 ###
 POST http://localhost:3000/tasks
 content-type: application/json
