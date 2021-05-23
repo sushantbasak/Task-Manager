@@ -3,16 +3,34 @@ http://localhost:3000/
 
 GET http://localhost:3000/users
 ###
-GET http://localhost:3000/users/60a895da65a9cb2a427d8274
-###
-PATCH http://localhost:3000/users/60a895da65a9cb2a427d8274
+POST http://localhost:3000/users
 content-type: application/json
 
 {
+    "name": "Sushant B  ",
+    "email" : "sushanssddfafsafsafddffssdff@gmail.com",
+    "password" : "sfafdfafaf",
     "age": 21,
     "height" : 5
 }
+###
+POST http://localhost:3000/users/login
+content-type: application/json
 
+{
+    "email" : "sushanntbasak@gmail.com",
+    "password" : "sfafdfafaf"
+}
+###
+GET http://localhost:3000/users/60a752985fe98c35162546d1
+###
+PATCH http://localhost:3000/users/60a9b9be0778ca1a95c20c03
+content-type: application/json
+
+
+{
+   "name": "Zleee sffag"
+}
 ###
 DELETE http://localhost:3000/users/60a895da65a9cb2a427d8274
 
@@ -37,7 +55,7 @@ POST http://localhost:3000/tasks
 content-type: application/json
 
 {
-    "desc": "Complete the next module by today",
+    "desc": "Google Kickstart Round C Today",
     "completed" : "false"
 }
 
