@@ -7,16 +7,16 @@ router.get('/users/me', auth, async (req, res) => {
   res.send(req.user);
 });
 
-router.get('/users/:id', async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id);
-    if (!user) return res.status(404).send('User not found');
+// router.get('/users/:id', async (req, res) => {
+//   try {
+//     const user = await User.findById(req.params.id);
+//     if (!user) return res.status(404).send('User not found');
 
-    res.send(user);
-  } catch (e) {
-    res.status(400).send(e);
-  }
-});
+//     res.send(user);
+//   } catch (e) {
+//     res.status(400).send(e);
+//   }
+// });
 
 router.post('/users/login', async (req, res) => {
   try {
@@ -30,6 +30,31 @@ router.post('/users/login', async (req, res) => {
     res.send({ user, token });
   } catch (e) {
     res.status(400).send('Unable to login');
+  }
+});
+
+router.post('/users/logout', auth, async (req, res) => {
+  try {
+    req.user.tokens = req.user.tokens.filter((token) => {
+      return token.token !== req.token;
+    });
+
+    await req.user.save();
+
+    res.send('Successfully Logout');
+  } catch (e) {
+    res.status(500).send('Invalid Operation');
+  }
+});
+
+router.post('/users/logoutall', auth, async (req, res) => {
+  try {
+    req.user.tokens = [];
+
+    await req.user.save();
+    res.send('Successfully logout of all accounts');
+  } catch (e) {
+    res.status(500).send('Invalid Operation');
   }
 });
 
@@ -86,15 +111,16 @@ router.patch('/users/:id', async (req, res) => {
   }
 });
 
-router.delete('/users/:id', async (req, res) => {
+router.delete('/users/me', auth, async (req, res) => {
   try {
-    const user = await User.findByIdAndDelete(req.params.id);
+    // const user = await User.findByIdAndDelete(req.user._id);
 
-    if (!user) {
-      return res.status(404).send('Invalid Operation');
-    }
+    // if (!user) {
+    //   return res.status(404).send('Invalid Operation');
+    // }
+    await req.user.remove();
 
-    res.send(user);
+    res.send(req.user);
   } catch (e) {
     res.status(500).send('Something went Wrong');
   }

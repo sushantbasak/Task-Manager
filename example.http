@@ -1,15 +1,15 @@
 http://localhost:3000/
 ###
 
-GET http://localhost:3000/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGE5Y2JhMjA5ZDM1ODI1NzNmZGYxNjkiLCJpYXQiOjE2MjE3NzM5Nzh9.nbIGvBxbQEjJItm0LboxBnmrJMBwq5hU1ZYKr1EVTjE
+DELETE http://localhost:3000/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGE5Y2JhMjA5ZDM1ODI1NzNmZGYxNjkiLCJpYXQiOjE2MjE4MjQ1MzJ9.WhNfyBOZlv_dsD4lGK7l-kd0UuT9f-UZzlmrikhxCYw
 ###
 POST http://localhost:3000/users
 content-type: application/json
 
 {
     "name": "Sushant B  ",
-    "email" : "sushanssddfafsafsafddffssdff@gmail.com",
+    "email" : "abc@gs.com",
     "password" : "sfafdfafaf",
     "age": 21,
     "height" : 5
@@ -19,7 +19,7 @@ POST http://localhost:3000/users/login
 content-type: application/json
 
 {
-    "email" : "sushanntbasak@gmail.com",
+     "email" : "abc@gs.com",
     "password" : "sfafdfafaf"
 }
 ###
