@@ -2,7 +2,7 @@ http://localhost:3000/
 ###
 
 DELETE http://localhost:3000/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGE5Y2JhMjA5ZDM1ODI1NzNmZGYxNjkiLCJpYXQiOjE2MjE4MjQ1MzJ9.WhNfyBOZlv_dsD4lGK7l-kd0UuT9f-UZzlmrikhxCYw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGFiMzY3Nzg4Mjg1NzFhMzA0ZDRlNTkiLCJpYXQiOjE2MjE4MzMzMzV9.uHmJB4tfN_QCmB5qz-4KvKFRHZ6zSecD8mCzuBwlLnc
 ###
 POST http://localhost:3000/users
 content-type: application/json
@@ -25,9 +25,9 @@ content-type: application/json
 ###
 GET http://localhost:3000/users/60a752985fe98c35162546d1
 ###
-PATCH http://localhost:3000/users/60a9b9be0778ca1a95c20c03
+PATCH http://localhost:3000/users/me
 content-type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGFiMzhhNjI2YTk5ZDFiNDFlNjcwNTQiLCJpYXQiOjE2MjE4MzM4OTZ9.4fIcGOep1uZVlxMz1uQDob-ATABVEOzrEHUl006eylQ
 
 {
    "name": "Zleee sffag"
@@ -53,6 +53,7 @@ DELETE  http://localhost:3000/tasks/60a88988358abde1cf0b9635
 
 ###
 POST http://localhost:3000/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGFiMzhhNjI2YTk5ZDFiNDFlNjcwNTQiLCJpYXQiOjE2MjE4MzQ3MTV9.SHU8MyJMt3CBAQGAjuMFl0ewW3tkGPOP-a9lF1KdZgc
 content-type: application/json
 
 {

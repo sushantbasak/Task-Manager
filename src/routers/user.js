@@ -72,7 +72,7 @@ router.post('/users', async (req, res) => {
   }
 });
 
-router.patch('/users/:id', async (req, res) => {
+router.patch('/users/me', auth, async (req, res) => {
   const updates = Object.keys(req.body);
 
   const allowedUpdates = ['name', 'age', 'email', 'password'];
@@ -86,13 +86,11 @@ router.patch('/users/:id', async (req, res) => {
   }
 
   try {
-    const user = await User.findById(req.params.id);
-
     updates.forEach((update) => {
-      user[update] = req.body[update];
+      req.user[update] = req.body[update];
     });
 
-    await user.save();
+    await req.user.save();
 
     // This code will not pass middleware when updated from the schema side hence need to be changed
 
@@ -101,11 +99,11 @@ router.patch('/users/:id', async (req, res) => {
     //   runValidators: true,
     // });
 
-    if (!user) {
-      return res.status(404).send('User not found');
-    }
+    // if (!req.user) {
+    //   return res.status(404).send('User not found');
+    // }
 
-    res.status(201).send(user);
+    res.status(201).send(req.user);
   } catch (e) {
     res.status(400).send(e);
   }
