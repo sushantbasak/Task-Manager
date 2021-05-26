@@ -5,47 +5,55 @@ const jwt = require('jsonwebtoken');
 
 //By placing unique indexes created in database which ensure uniqueness
 
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  email: {
-    type: String,
-    unique: true,
-    required: true,
-    trim: true,
-    lowercase: true,
-    validate(value) {
-      if (!validator.isEmail(value)) throw new Error('Email is not valid ');
-    },
-  },
-  age: {
-    type: Number,
-    validate(value) {
-      if (value < 0) throw new Error('Age must be a positive number');
-    },
-  },
-  password: {
-    type: String,
-    required: true,
-    trim: true,
-    minlength: 7,
+//methods -> instances/documents	
+//statics -> model
 
-    validate(value) {
-      if (value == 'password') throw new Error("Can't be password");
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      trim: true,
     },
-  },
-  tokens: [
-    {
-      token: {
-        type: String,
-        required: true,
+    email: {
+      type: String,
+      unique: true,
+      required: true,
+      trim: true,
+      lowercase: true,
+      validate(value) {
+        if (!validator.isEmail(value)) throw new Error('Email is not valid ');
       },
     },
-  ],
-});
+    age: {
+      type: Number,
+      validate(value) {
+        if (value < 0) throw new Error('Age must be a positive number');
+      },
+    },
+    password: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 7,
+
+      validate(value) {
+        if (value == 'password') throw new Error("Can't be password");
+      },
+    },
+    tokens: [
+      {
+        token: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
+);
 
 userSchema.virtual('tasks', {
   ref: 'Task',
