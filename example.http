@@ -9,7 +9,7 @@ content-type: application/json
 
 {
     "name": "Sushant B  ",
-    "email" : "abdc@gss.com",
+    "email" : "abdcd@gss.com",
     "password" : "sfafdfafaf",
     "age": 21,
     "height" : 5
@@ -19,7 +19,7 @@ POST http://localhost:3000/users/login
 content-type: application/json
 
 {
-     "email" : "abc@gss.com",
+    "email" : "abdcd@gss.com",
     "password" : "sfafdfafaf"
 }
 ###
