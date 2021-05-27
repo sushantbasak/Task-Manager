@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const Task = require('./task');
 
 //By placing unique indexes created in database which ensure uniqueness
 
-//methods -> instances/documents	
+//methods -> instances/documents
 //statics -> model
 
 // With the help of statics we can access all the available documents but with the help of
@@ -60,6 +61,11 @@ const userSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+// Virtual Property
+// Its a relationship between two entities
+// ref -> Referenced relation, localfield -> Relation between both these, foreignField -> Name of field in referenced collection
+// These are not stored in database when connection is set up
 
 userSchema.virtual('tasks', {
   ref: 'Task',
