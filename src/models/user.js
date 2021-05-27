@@ -8,6 +8,12 @@ const jwt = require('jsonwebtoken');
 //methods -> instances/documents	
 //statics -> model
 
+// With the help of statics we can access all the available documents but with the help of
+// methods we can access only the current document
+
+// Schema -> Instance of the current document
+// Model -> With it we can also add custom made function which helps in direct quering
+
 const userSchema = new mongoose.Schema(
   {
     name: {
