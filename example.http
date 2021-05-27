@@ -9,7 +9,7 @@ content-type: application/json
 
 {
     "name": "Sushant B  ",
-    "email" : "abc@gs.com",
+    "email" : "abdc@gss.com",
     "password" : "sfafdfafaf",
     "age": 21,
     "height" : 5
@@ -19,7 +19,7 @@ POST http://localhost:3000/users/login
 content-type: application/json
 
 {
-     "email" : "abc@gs.com",
+     "email" : "abc@gss.com",
     "password" : "sfafdfafaf"
 }
 ###
@@ -36,8 +36,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGFiMzhhN
 DELETE http://localhost:3000/users/60a895da65a9cb2a427d8274
 
 ###
-GET http://localhost:3000/tasks/
-
+GET http://localhost:3000/tasks?sortBy=createdAt:desc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGFmNDUxY2VmYTljNDM2MGFlNTcwNjgiLCJpYXQiOjE2MjIwOTkyMjh9.auifms261vPMKnSu6OXneUThzhbnctmrcDcgMIa3_S4
 ###
 GET http://localhost:3000/tasks/60a88988358abde1cf0b9635
 ###
@@ -53,12 +53,12 @@ DELETE  http://localhost:3000/tasks/60a88988358abde1cf0b9635
 
 ###
 POST http://localhost:3000/tasks
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGFiMzhhNjI2YTk5ZDFiNDFlNjcwNTQiLCJpYXQiOjE2MjE4MzQ3MTV9.SHU8MyJMt3CBAQGAjuMFl0ewW3tkGPOP-a9lF1KdZgc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGFmNDUxY2VmYTljNDM2MGFlNTcwNjgiLCJpYXQiOjE2MjIwOTkyMjh9.auifms261vPMKnSu6OXneUThzhbnctmrcDcgMIa3_S4
 content-type: application/json
 
 {
-    "desc": "Google Kickstart Round C Today",
-    "completed" : "false"
+    "desc": "Hello World",
+    "completed" : "true"
 }
 
 
