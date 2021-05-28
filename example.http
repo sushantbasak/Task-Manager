@@ -8,18 +8,22 @@ POST http://localhost:3000/users
 content-type: application/json
 
 {
-    "name": "Sushant B  ",
-    "email" : "abdcd@gss.com",
+    "name": "Sushant Bs  ",
+    "email" : "kevinmartin2428@gmail.com",
     "password" : "sfafdfafaf",
     "age": 21,
     "height" : 5
 }
 ###
+DELETE http://localhost:3000/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGIwNGRkMTUwM2M1MzIzYzI5NTdlMGUiLCJpYXQiOjE2MjIxNjc0MzR9.RwidGzIRVDRvQwlig_4kucq6ac4hZg14pLnt5uQa89I
+
+###
 POST http://localhost:3000/users/login
 content-type: application/json
 
 {
-    "email" : "abdcd@gss.com",
+   "email" : "kevinmartin2428@gmail.com",
     "password" : "sfafdfafaf"
 }
 ###
