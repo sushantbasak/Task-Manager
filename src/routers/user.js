@@ -3,7 +3,7 @@ const router = express.Router();
 const auth = require('../middileware/auth');
 const User = require('../models/user');
 const multer = require('multer');
-const { sendWelcomeEmail, sendGoodByeEmail } = require('../emails/account');
+// const { sendWelcomeEmail, sendGoodByeEmail } = require('../emails/account');
 
 router.get('/users/me', auth, async (req, res) => {
   res.send(req.user);
@@ -66,7 +66,7 @@ router.post('/users', async (req, res) => {
   try {
     await user.save();
 
-    sendWelcomeEmail(user.email, user.name);
+    // sendWelcomeEmail(user.email, user.name);
 
     const token = await user.generateAuthToken();
 
@@ -95,7 +95,7 @@ router.patch('/users/me', auth, async (req, res) => {
     });
 
     await req.user.save();
-    sendGoodByeEmail;
+
     // This code will not pass middleware when updated from the schema side hence need to be changed
 
     // const user = await User.findByIdAndUpdate(req.params.id, req.body, {
@@ -121,7 +121,7 @@ router.delete('/users/me', auth, async (req, res) => {
     //   return res.status(404).send('Invalid Operation');
     // }
     await req.user.remove();
-    sendGoodByeEmail(req.user.email, req.user.name);
+    // sendGoodByeEmail(req.user.email, req.user.name);
     res.send(req.user);
   } catch (e) {
     res.status(500).send('Something went Wrong');
