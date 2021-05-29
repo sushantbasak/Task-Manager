@@ -5,7 +5,7 @@ const User = require('../models/user');
 const multer = require('multer');
 // const { sendWelcomeEmail, sendGoodByeEmail } = require('../emails/account');
 
-router.get('/users/me', auth, async (req, res) => {
+router.get('/users/me', auth, (req, res) => {
   res.send(req.user);
 });
 

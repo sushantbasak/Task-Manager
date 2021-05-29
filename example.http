@@ -9,14 +9,13 @@ content-type: application/json
 
 {
     "name": "Sushant Bs  ",
-    "email" : "kevinmardddtin2428@gmail.com",
+    "email" : "kevindmsardddtin2428@gmail.com",
     "password" : "sfafdfafaf",
     "age": 21,
     "height" : 5
 }
 ###
-DELETE http://localhost:3000/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGIwNGRkMTUwM2M1MzIzYzI5NTdlMGUiLCJpYXQiOjE2MjIxNjc0MzR9.RwidGzIRVDRvQwlig_4kucq6ac4hZg14pLnt5uQa89I
+ GET http://localhost:3000/users/me
 
 ###
 POST http://localhost:3000/users/login
@@ -31,10 +30,11 @@ GET http://localhost:3000/users/60a752985fe98c35162546d1
 ###
 PATCH http://localhost:3000/users/me
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGFiMzhhNjI2YTk5ZDFiNDFlNjcwNTQiLCJpYXQiOjE2MjE4MzM4OTZ9.4fIcGOep1uZVlxMz1uQDob-ATABVEOzrEHUl006eylQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGIwODY2ZTg3OTFlZjJiMjZlYTdjNGYiLCJpYXQiOjE2MjIyNTU0MjF9.Panoq2662FNwd6OksghJcnuG2jgMxkAE_etNx-dCsTM
 
 {
-   "name": "Zleee sffag"
+   "name": "Zleee sffag",
+   "location" : "India"
 }
 ###
 DELETE http://localhost:3000/users/60a895da65a9cb2a427d8274

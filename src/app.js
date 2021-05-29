@@ -4,8 +4,6 @@ const app = express();
 const userRouter = require('./routers/user');
 const taskRouter = require('./routers/task');
 
-const port = process.env.PORT;
-
 // app.use((req, res, next) => {
 //   res.status(503).send('Site is under maintainence');
 // });
@@ -56,6 +54,4 @@ app.post(
   }
 );
 
-app.listen(port, () =>
-  console.log('Server started successfully on port ' + port)
-);
+module.exports = app;
